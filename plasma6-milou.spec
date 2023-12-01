@@ -30,6 +30,7 @@ BuildRequires: cmake(ECM)
 BuildRequires: cmake(KF6)
 BuildRequires: cmake(KF6Runner)
 BuildRequires: cmake(Plasma) >= 5.90.0
+BuildRequires: cmake(PlasmaQuick)
 BuildRequires: cmake(KF6I18n)
 BuildRequires: cmake(KF6Declarative)
 BuildRequires: cmake(KF6Service)
