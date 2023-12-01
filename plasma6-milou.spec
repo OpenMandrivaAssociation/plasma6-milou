@@ -36,6 +36,7 @@ BuildRequires: cmake(KF6Service)
 BuildRequires: cmake(KF6ItemModels)
 BuildRequires: cmake(KF6CoreAddons)
 BuildRequires: cmake(KF6DocTools)
+BuildRequires: cmake(KF6Svg)
 
 %description
 A search client for Baloo.
