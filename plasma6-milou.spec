@@ -36,8 +36,6 @@ BuildRequires: cmake(KF6Service)
 BuildRequires: cmake(KF6ItemModels)
 BuildRequires: cmake(KF6CoreAddons)
 BuildRequires: cmake(KF6DocTools)
-# Just to make sure we don't pull in Plasma 5
-BuildRequires: plasma6-xdg-desktop-portal-kde
 
 %description
 A search client for Baloo.
