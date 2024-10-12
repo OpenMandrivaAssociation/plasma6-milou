@@ -7,7 +7,7 @@
 %define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 
 Name: plasma6-milou
-Version:	6.1.5
+Version:	6.2.0
 Release:	%{?git:0.%{git}.}1
 %if 0%{?git:1}
 Source0:	https://invent.kde.org/plasma/milou/-/archive/%{gitbranch}/milou-%{gitbranchd}.tar.bz2#/milou-%{git}.tar.bz2
