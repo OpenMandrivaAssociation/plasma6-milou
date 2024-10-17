@@ -15,7 +15,7 @@ Source0:	https://invent.kde.org/plasma/milou/-/archive/%{gitbranch}/milou-%{gitb
 Source0: http://download.kde.org/%{stable}/plasma/%{plasmaver}/milou-%{version}.tar.xz
 %endif
 Summary: A search client for Baloo
-URL: http://kde.org/
+URL: https://kde.org/
 License: GPL
 Group: System/Libraries
 BuildRequires: cmake(Qt6)
