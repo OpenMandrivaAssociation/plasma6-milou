@@ -6,9 +6,9 @@
 %define gitbranch Plasma/6.0
 %define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 
-Name: plasma6-milou
+Name: milou
 Version:	6.3.4
-Release:	%{?git:0.%{git}.}1
+Release:	%{?git:0.%{git}.}2
 %if 0%{?git:1}
 Source0:	https://invent.kde.org/plasma/milou/-/archive/%{gitbranch}/milou-%{gitbranchd}.tar.bz2#/milou-%{git}.tar.bz2
 %else
@@ -40,6 +40,11 @@ BuildRequires: cmake(KF6ItemModels)
 BuildRequires: cmake(KF6CoreAddons)
 BuildRequires: cmake(KF6DocTools)
 BuildRequires: cmake(KF6Svg)
+BuildSystem: cmake
+BuildOption: -DBUILD_QCH:BOOL=ON
+BuildOption: -DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
+# Renamed after 6.0 2025-05-01
+%rename plasma6-milou
 
 %description
 A search client for Baloo.
@@ -52,24 +57,7 @@ Requires: %{name} = %{EVRD}
 %description -n %{devname}
 Development files for the KDE Frameworks 5 Milou search library.
 
-%prep
-%autosetup -p1 -n milou-%{?git:%{gitbranchd}}%{!?git:%{version}}
-%cmake \
-	-DBUILD_QCH:BOOL=ON \
-	-DBUILD_WITH_QT6:BOOL=ON \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
-	-G Ninja
-
-%build
-%ninja_build -C build
-
-%install
-%ninja_install -C build
-
-%find_lang milou
-%find_lang plasma_applet_org.kde.milou
-
-%files -f milou.lang -f plasma_applet_org.kde.milou.lang
+%files -f %{name}.lang
 %{_qtdir}/qml/org/kde/milou
 %{_datadir}/plasma/plasmoids/org.kde.milou
 %{_datadir}/metainfo/org.kde.milou.appdata.xml
